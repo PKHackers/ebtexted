@@ -47,7 +47,7 @@ int LoadEXPText(FILE *rom, String strlist[], CCNode ccTable)
 		address+=s.len;
 		istr++;
 
-	}while(address < 0x400200);
+	}while(address < 0x300200+0xA0000);
 
 	return istr;
 }

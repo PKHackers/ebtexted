@@ -29,7 +29,7 @@ Type=0
 HeaderFile=TextEdDlg.h
 ImplementationFile=TextEdDlg.cpp
 Filter=D
-LastObject=IDC_APPLY
+LastObject=CTextEdDlg
 BaseClass=CDialog
 VirtualFilter=dWC
 

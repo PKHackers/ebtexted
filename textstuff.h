@@ -6,22 +6,31 @@
 #define TYPE_ARGLIST 1
 
 
-struct CCNode {
-	int level;		// depth, i.e., CC byte # (sorta)
-	int value;		// byte value (-1 for arguments)
+// Control code node structure
+// (Linked tree-list)
 
-	int type;		// code byte or argument
-	int num_arg;	// number of argument bytes
-	int args[32];	// argument list
+struct CCNode {
+	// Node properties
+	int level;				// depth, i.e., CC byte # (sorta)
+	int value;				// byte value (-1 for arguments)
+
+	int type;				// code byte or argument
+	int num_arg;			// number of argument bytes
+	int args[32];			// argument list
 	bool arg_multiplier;	// if true, number of arguments remaining is multiplied by the
 							// value of the first
-
 	bool isTerminator;
 
+	// Parent node
+	CCNode *parent;
+
+	// Child nodes
 	int num_nodes;
 	CCNode *nodes;
 };
 
+
+// Contains info about a string in the ROM
 struct String {
 	int address;
 
